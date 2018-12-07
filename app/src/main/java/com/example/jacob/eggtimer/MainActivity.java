@@ -15,7 +15,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
     SeekBar eggTimeSeeker;
     int seekStep = 15;
-    int timerMaxMinutes = 60;
+    int timerMaxMinutes = 10;
     CountDownTimer eggTimer;
 
     public void startEggTimer(View view) {
@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
         // Create the egg timer which ticks every second. Each tick updates the
         // text view with the currently remaining time. If the timer finishes
         // an air horn sound is played.
-        this.eggTimer = new CountDownTimer(currentTimerSeconds, 1000) {
+        this.eggTimer = new CountDownTimer(currentTimerSeconds + 100, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                MainActivity.this.updateTime(((int) millisUntilFinished + 100) / 1000);
+                MainActivity.this.updateTime((int) millisUntilFinished / 1000);
             }
 
             @Override
