@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         this.eggTimer = new CountDownTimer(currentTimerSeconds, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                MainActivity.this.updateTime((int) millisUntilFinished / 1000);
+                MainActivity.this.updateTime(((int) millisUntilFinished + 100) / 1000);
             }
 
             @Override
@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Enable the seek bar and set the progress back to 0.
                 MainActivity.this.eggTimeSeeker.setEnabled(true);
-                MainActivity.this.eggTimeSeeker.setProgress(0);
             }
         };
 
